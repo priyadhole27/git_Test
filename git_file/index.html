@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Color Changer</title>
+</head>
+<body>
+    <div class="container" id="cont">
+        <button id="btn">Change Color</button>
+    </div>
+    <script>
+        var color = ['black','lightblue','green','aqua'];
+        var i = 0;
+        var j = 2 ;
+        var btn = document.getElementById("btn")
+        var cont = document.getElementById("cont")
+        btn.addEventListener("click",()=>{
+            if(i > 3){
+                i = 0;
+            }
+            if(j > 3){
+                j = 0;
+            }
+            cont.style.backgroundColor = color[i]
+            btn.style.backgroundColor = color[j]
+            if(color[j] === 'black'){
+                btn.style.color = 'white';
+            }
+            else{
+                btn.style.color = 'black'
+            }
+            i++;
+            j++;
+        })
+    </script>
+</body>
+</html>
